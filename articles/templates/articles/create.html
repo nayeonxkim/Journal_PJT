@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>게시글 작성 페이지</h1>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value='완료'>
+
+  </form>
+
+{% endblock content %}
+
+
