@@ -8,3 +8,10 @@ class Article(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
+class Comment(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    content = models.TextField(max_length=140)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.content
