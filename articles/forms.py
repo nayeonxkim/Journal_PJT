@@ -1,5 +1,5 @@
 from django import forms
-from .models import Article
+from .models import Article, Comment
 
 class ArticleForm(forms.ModelForm):
 
@@ -7,5 +7,10 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = '__all__'
 
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        exclude = ('article',)
 
 
